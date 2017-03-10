@@ -14,7 +14,6 @@ module.exports = function(){
                     res.status(500).send(err);
 
                 });
-        res.send("le ricette del mondo");
     }
       var dettaglioRicetta = function(req,res){
         var id = res,params,id;
@@ -37,15 +36,43 @@ module.exports = function(){
                     }).catch(function(err){
                         console.log("error");
                         res.status(500).json(err);
-                    })
-          
+                    })   
+    }
+
+    var cercaperCategoria = function(req,res){
+        var categoria = req.query.categoria;
+            Ricette.find({
+                "categoria":categoria,
+            }).exec()
+              .then(function(data){
+                  res.status(200).json(data);
+              })
+              .catch(function(err){
+                  res.status(500).send(err);
+              })
     }
     
+        var ricercaperIngredienti = function(req,res){
+            var ingredienti = req.query.ingredienti;
+            Ricette.find({
+
+                "categoria":categoria,
+                
+            }).exec()
+                .then(function(data){
+                    res.status(200).json(data);
+                })
+                .catch(function(err){
+                    res.status(500).send(err);
+                })
+        }
+
 
     return{
         getRicette:getRicette,
         dettaglioRicetta:dettaglioRicetta,
-        creaRicetta:creaRicetta
-        
+        creaRicetta:creaRicetta,
+        cercaperCategoria:cercaperCategoria,
+        ricercaperIngredienti:ricercaperIngredienti
     }
 }();//queste due parentesi sono  una funzione che si lancia da sola e ritorna un oggetto 

@@ -11,4 +11,9 @@ router.get('/:id([0-9a-f]{24})',Ricette.dettaglioRicetta);
 //ROTTA PER CREARE LA RICETTA
 router.post('/',Ricette.creaRicetta);
 
+//ROTTA PER RICERCA PER CATEGORIA
+router.get('/cerca',Ricette.cercaperCategoria);
+
+//ROTTA PER RICERCA PER INGREDIENTI
+
 module.exports= router;

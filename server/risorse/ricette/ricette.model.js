@@ -44,9 +44,14 @@ var ricettaSchema = new Schema({
         max:[250,"si brucia"]
     },
     voto:{
+        numerivoti:{
+            type:Number,
+        },
+        sommavoti:{
         type:Number,
         min:[1,"poco"],
         max:[5,"troppo"]
+        }
     },
     
 commenti:[{
