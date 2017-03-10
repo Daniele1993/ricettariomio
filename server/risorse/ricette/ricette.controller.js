@@ -14,8 +14,10 @@ module.exports = function(){
           var nuovaRicetta = new Ricette(req.body);
           nuovaRicetta.save()
                       .then(function(data){
+                          console.log("success");
                           res.status(200).json(data);
                     }).catch(function(err){
+                        console.log("error");
                         res.status(500).json(err);
                     })
           

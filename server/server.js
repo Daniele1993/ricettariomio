@@ -4,7 +4,9 @@ var path = require('path');
 
 const PORT = 3000;
 
-
+//TRADUZIONE DEL BODY
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 //IMPORTO IL FILE DI CONFIGURAZIONE PER IL DB
 require("./config/database.js");

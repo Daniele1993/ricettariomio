@@ -6,38 +6,36 @@ var ricettaSchema = new Schema({
         type: String,
         required:[true,"devi inserire un titolo"]
     },
-    immagini:{
+    immagini:[{
         type:String,
         required:[true,"devi inserire un immagine"]
-    },
+    }],
     
     categoria:{
         type: String,
         enum:[true,"antipasto","primo","secondo","contorni","dolci"],
         required: [true,"devi inserire una categoria"]
     },
-    ingredienti:{
+    ingredienti:[{
         type:String,
         required:[true,"devi inserire un ingrediente"]
-    },
+    }],
 
     difficolta:{
         type: String,
+        enum:["facile","medio","difficile"],
         required:[true,"devi inserire una difficolta"]
     },
-    gradicottura:{
-        type:Number,
-        required:[true,"inserisci temperatura di cottura"],
-        min:[5,""],
-        max:[true,""]
-    },
+
     preparazione:{
         type:String,
         required:[true,"inserisci la modalita di preaparazione"]
     },
     tempodicottura:{
-        type:String,
-        required:[true,"devi inserire un tempo"]
+        type:Number,
+        required:[true,"devi inserire un tempo"],
+        min:[5,"troppo poco"],
+        max:[180,"troppo"]
     },
     temperaturadicottura:{
         type:String,
@@ -56,10 +54,7 @@ commenti:[{
         type:Schema.Types.ObjectId,
         ref:"Utenti"
     },
-    commento:{
-        type:String,
-        required:true
-    }
+    commento: String,
 }],
 
 });

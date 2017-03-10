@@ -9,6 +9,6 @@ router.get('/',Ricette.getRicette);
 router.get('/:id([0-9a-f]{24})',Ricette.dettaglioRicetta);
 
 //ROTTA PER CREARE LA RICETTA
-router.get('/',Ricette.creaRicetta);
+router.post('/',Ricette.creaRicetta);
 
 module.exports= router;
