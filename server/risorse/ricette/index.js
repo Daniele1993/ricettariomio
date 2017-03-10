@@ -15,5 +15,7 @@ router.post('/',Ricette.creaRicetta);
 router.get('/cerca',Ricette.cercaperCategoria);
 
 //ROTTA PER RICERCA PER INGREDIENTI
+router.get('/ricerca',Ricette.ricercaperIngredienti);
+
 
 module.exports= router;
