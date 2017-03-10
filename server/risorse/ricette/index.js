@@ -17,5 +17,8 @@ router.get('/cerca',Ricette.cercaperCategoria);
 //ROTTA PER RICERCA PER INGREDIENTI
 router.get('/ricerca',Ricette.ricercaperIngredienti);
 
+//ROTTA PER VOTO RICETTA
+router.put('/:id([0-9a-f]{24})',Ricette.votoRicetta);
+
 
 module.exports= router;

@@ -49,8 +49,7 @@ var ricettaSchema = new Schema({
         },
         sommavoti:{
         type:Number,
-        min:[1,"poco"],
-        max:[5,"troppo"]
+      
         }
     },
     
