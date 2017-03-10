@@ -5,11 +5,29 @@ var Ricette =require('./ricette.model.js')
 module.exports = function(){
     
     var getRicette = function(req,res){
+        Ricette.find()
+                .exec()
+                .then(function(data){
+                    res.status(200).json(data);
+                })
+                .catch(function(err){
+                    res.status(500).send(err);
+
+                });
         res.send("le ricette del mondo");
     }
       var dettaglioRicetta = function(req,res){
-        res.send("dettaglio ricetta");
+        var id = res,params,id;
+        Ricette.findById(id)
+                .exec()
+                .then(function(data){
+                    res.status(200).json(data);
+                })
+                .catch(function(err){
+                    res.status(500).sens(err);
+                });  
     }
+      
       var creaRicetta = function(req,res){
           var nuovaRicetta = new Ricette(req.body);
           nuovaRicetta.save()
